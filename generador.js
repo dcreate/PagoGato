@@ -2,7 +2,7 @@
     // COLOCA AQUÍ EL NÚMERO DE TARJETA
     // ==================================================
 
-    const CARD_NUMBER = "4152314231084636";
+    const CARD_NUMBER = "4152314110957118";
 
 
     // Mostrar número con espacios cada 4 dígitos
