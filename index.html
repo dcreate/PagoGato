@@ -18,15 +18,58 @@
 <body>
   <div class="card">
     <h1>💳 Número de tarjeta</h1>
-    <div class="number" id="numero">
-      Cargando...
-    </div>
-    <button onclick="copiarNumero()">
-      📋 Copiar número
-    </button>
+    <!-- =========================
+         TITULAR
+         ========================= -->
 
+    <div class="dato">
+
+      <span class="etiqueta">
+        TITULAR
+      </span>
+
+      <div class="valor" id="titular">
+        Cargando...
+      </div>
+
+      <button
+        class="boton"
+        id="botonTitular"
+        onclick="copiarDato('titular', 'botonTitular', 'Titular copiado')">
+
+        📋 Copiar nombre
+
+      </button>
+
+    </div>
+
+
+    <!-- =========================
+         TARJETA
+         ========================= -->
+
+    <div class="dato">
+
+      <span class="etiqueta">
+        NÚMERO DE TARJETA
+      </span>
+
+      <div class="valor" id="numero">
+        Cargando...
+      </div>
+
+      <button
+        class="boton"
+        id="botonTarjeta"
+        onclick="copiarDato('numero', 'botonTarjeta', 'Número copiado')">
+
+        📋 Copiar número
+
+      </button>
+
+    </div>
 	<div class="aviso1">
-      BBVA Bancomer. <br>Felix de Jesús Carrillo Celerino 
+      BBVA Bancomer. 
 	</div>
     <div id="mensaje"></div>
     <div class="qr">
