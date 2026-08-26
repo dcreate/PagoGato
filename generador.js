@@ -1,113 +1,239 @@
-   
-    const CARD_OWNER = "Felix de Jesus Carrillo Celerino";
-    const CARD_NUMBER = "4152314110957118";
+
+/* ==========================================
+   TARJETAS
+   ========================================== */
+
+const tarjetas = {
+
+  tarjeta1: {
+
+    banco: "BBVA BANCOMER",
+
+    numero: "4152314110957118",
+
+    titular: "Felix de Jesus Carrillo Celerino"
+
+  },
+
+
+  tarjeta2: {
+
+    banco: "Santander",
+
+    numero: "5579087009265130",
+
+    titular: "Felix de Jesus Carrillo Celerino"
+
+  },
+
+};
+
+
+/* ==========================================
+   TARJETA ACTUAL
+   ========================================== */
+
+let tarjetaActual = "tarjeta1";
+
+
+/* ==========================================
+   FORMATEAR TARJETA
+   ========================================== */
 
 function formatearNumero(numero) {
 
-      return numero
-        .replace(/\D/g, '')
-        .replace(/(.{4})/g, '$1 ')
-        .trim();
+  return numero
+    .replace(/\D/g, '')
+    .replace(/(.{4})/g, '$1 ')
+    .trim();
 
-    }
-
-
-    document.getElementById("titular").textContent =
-      CARD_OWNER;
+}
 
 
-    document.getElementById("numero").textContent =
-      formatearNumero(CARD_NUMBER);
+/* ==========================================
+   CAMBIAR BANCO
+   ========================================== */
 
- async function copiarDato(elemento, boton, mensaje) {
+function cambiarTarjeta() {
+
+  tarjetaActual =
+    document.getElementById(
+      "selectorTarjeta"
+    ).value;
+
+
+  const tarjeta =
+    tarjetas[tarjetaActual];
+
+
+  document.getElementById("banco")
+    .textContent =
+    tarjeta.banco;
+
+
+  document.getElementById("titular")
+    .textContent =
+    tarjeta.titular;
+
+
+  document.getElementById("numero")
+    .textContent =
+    formatearNumero(
+      tarjeta.numero
+    );
+
+
+  /* Actualizar QR */
+
+  generarQR();
+
+}
+
+
+/* ==========================================
+   COPIAR
+   ========================================== */
+
+async function copiarDato(
+  elemento,
+  boton
+) {
+
+  const tarjeta =
+    tarjetas[tarjetaActual];
+
 
   let texto;
 
+
   if (elemento === "titular") {
-    texto = CARD_OWNER;
+
+    texto = tarjeta.titular;
+
   } else {
-    texto = CARD_NUMBER;
+
+    texto = tarjeta.numero;
+
   }
+
 
   try {
 
-    await navigator.clipboard.writeText(texto);
+    await navigator.clipboard
+      .writeText(texto);
 
-  } catch (error) {
+  }
 
-    const textarea = document.createElement("textarea");
+  catch (error) {
+
+    const textarea =
+      document.createElement(
+        "textarea"
+      );
 
     textarea.value = texto;
 
-    document.body.appendChild(textarea);
+    document.body.appendChild(
+      textarea
+    );
 
     textarea.select();
 
-    document.execCommand("copy");
+    document.execCommand(
+      "copy"
+    );
 
     textarea.remove();
+
   }
 
 
-  // =========================
-  // ANIMACIÓN
-  // =========================
-
   const botonElemento =
-    document.getElementById(boton);
+    document.getElementById(
+      boton
+    );
 
-  botonElemento.classList.add("animando");
+
+  /* Animación */
+
+  botonElemento
+    .classList
+    .add("animando");
+
 
   setTimeout(() => {
 
-    botonElemento.classList.remove("animando");
+    botonElemento
+      .classList
+      .remove("animando");
 
   }, 600);
 
 
-  // Estado "Copiado"
+  botonElemento
+    .classList
+    .add("copiado");
 
-  botonElemento.classList.add("copiado");
 
   const textoOriginal =
     botonElemento.innerHTML;
+
 
   botonElemento.innerHTML =
     "✓ ¡Copiado!";
 
 
-  document.getElementById("mensaje").textContent =
-    mensaje;
+  document.getElementById(
+    "mensaje"
+  ).textContent =
+    "✓ Copiado al portapapeles";
 
-
-  // Regresar después de 1.8 segundos
 
   setTimeout(() => {
 
-    botonElemento.classList.remove("copiado");
+    botonElemento
+      .classList
+      .remove("copiado");
 
     botonElemento.innerHTML =
       textoOriginal;
 
-    document.getElementById("mensaje").textContent =
-      "";
+    document.getElementById(
+      "mensaje"
+    ).textContent = "";
 
   }, 1800);
 
 }
 
 
-    // ==================================================
-    // GENERAR QR
-    // ==================================================
+/* ==========================================
+   GENERAR QR
+   ========================================== */
 
-    const paginaActual =  CARD_NUMBER ;
+function generarQR() {
 
-
-    const qrURL =
-      "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data="
-      + encodeURIComponent(paginaActual);
+  const paginaActual =
+   tarjeta.banco;
 
 
-    document.getElementById("qrImagen").src =
-      qrURL;
+  const qrURL =
+    "https://api.qrserver.com/v1/create-qr-code/"
+    + "?size=300x300&data="
+    + encodeURIComponent(
+        paginaActual
+      );
+
+
+  document.getElementById(
+    "qrImagen"
+  ).src = qrURL;
+
+}
+
+
+/* ==========================================
+   INICIO
+   ========================================== */
+
+cambiarTarjeta();

@@ -1,113 +1,182 @@
- * {
-      box-sizing: border-box;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
-      padding: 20px;
-    }
+body {
+  margin: 0;
+  min-height: 100vh;
 
-    .card {
-      width: 100%;
-      max-width: 400px;
-      padding: 30px 25px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 8px 30px rgba(0,0,0,.15); 
-      background-image: url('img/GatoBarato200x400.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 350px 1150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Arial, sans-serif;
+
+  background: #f2f2f2;
+
+  padding: 20px;
+}
 
 
-    }
+/* TARJETA PRINCIPAL */
 
-    h1 {
-      margin-top: 0;
-      font-size: 24px;
-    }
+.card {
+  width: 100%;
+  max-width: 400px;
 
-    .dato {
-      margin-top: 20px;
-      text-align: left;
-    }
+  background: white;
 
-    .etiqueta {
-      display: block;
-      margin-bottom: 7px;
-      font-size: 15px;
-      color: #310d94;
-      font-weight: bold;
-    }
+  padding: 30px 25px;
 
-    .valor {
-      padding: 16px 12px;
-      background: #f5f5f5;
-      border-radius: 12px;
-      font-size: 18px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      word-break: break-word;
-      text-align: center;
-    }
+  border-radius: 20px;
 
-    /* =========================
-       BOTÓN
-       ========================= */
+  text-align: center;
 
-   /* =========================
-   BOTÓN ANIMADO
-   ========================= */
+  box-shadow:
+    0 8px 30px rgba(0,0,0,.15);
+}
+
+
+h1 {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+
+/* SELECTOR */
+
+.selector-container {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.selector-container label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 13px;
+
+  color: #777;
+
+  font-weight: bold;
+}
+
+select {
+  width: 100%;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  border: 1px solid #ddd;
+
+  background: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  outline: none;
+
+  transition: .3s;
+}
+
+select:focus {
+  border-color: #222;
+
+  box-shadow:
+    0 0 0 3px rgba(0,0,0,.08);
+}
+
+
+/* DATOS */
+
+.dato {
+  margin-top: 20px;
+
+  text-align: left;
+}
+
+.etiqueta {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 13px;
+
+  color: #777;
+
+  font-weight: bold;
+}
+
+.valor {
+  padding: 16px 12px;
+
+  background: #f5f5f5;
+
+  border-radius: 12px;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+  letter-spacing: 1px;
+
+  word-break: break-word;
+
+  text-align: center;
+}
+
+
+/* BOTONES */
 
 .boton {
   position: relative;
+
   overflow: hidden;
 
   width: 100%;
+
   margin-top: 10px;
+
   padding: 14px;
 
   border: none;
+
   border-radius: 12px;
 
   background: #222;
+
   color: white;
 
   font-size: 16px;
+
   font-weight: bold;
 
   cursor: pointer;
 
   transition:
-    transform 0.15s ease,
-    background 0.3s ease,
-    box-shadow 0.3s ease;
+    transform .15s ease,
+    background .3s ease,
+    box-shadow .3s ease;
 }
-
-/* Al pasar el dedo/mouse */
 
 .boton:hover {
   background: #333;
-  box-shadow: 0 6px 18px rgba(0,0,0,.20);
-  transform: translateY(-2px);
-}
 
-/* Al presionar */
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 18px rgba(0,0,0,.20);
+}
 
 .boton:active {
-  transform: scale(0.94);
+  transform: scale(.94);
 }
 
 
-/* =========================
-   EFECTO DE ONDA
-   ========================= */
+/* EFECTO ONDA */
 
 .boton::after {
   content: "";
@@ -124,48 +193,46 @@
 
   background: rgba(255,255,255,.45);
 
-  transform: translate(-50%, -50%) scale(0);
+  transform:
+    translate(-50%, -50%)
+    scale(0);
 
   opacity: 0;
 }
 
-
-/* Activar onda */
-
 .boton.animando::after {
-
   animation: onda .6s ease-out;
-
 }
-
 
 @keyframes onda {
 
   0% {
-    transform: translate(-50%, -50%) scale(0);
+    transform:
+      translate(-50%, -50%)
+      scale(0);
+
     opacity: .7;
   }
 
   100% {
-    transform: translate(-50%, -50%) scale(35);
+    transform:
+      translate(-50%, -50%)
+      scale(35);
+
     opacity: 0;
   }
 
 }
 
 
-/* =========================
-   ESTADO COPIADO
-   ========================= */
+/* ESTADO COPIADO */
 
 .boton.copiado {
 
-  background: #3616a8;
+  background: #198754;
 
   animation: copiado .5s ease;
-
 }
-
 
 @keyframes copiado {
 
@@ -187,45 +254,55 @@
 
 }
 
-    #mensaje {
-      margin-top: 15px;
-      min-height: 20px;
-      color: #198754;
-      font-weight: bold;
-    }
 
-    /* =========================
-       QR
-       ========================= */
+/* MENSAJE */
 
-    .qr {
-      margin-top: 30px;
-      padding-top: 20px;
-      border-top: 1px solid #eee;
-    }
+#mensaje {
+  margin-top: 15px;
 
-    .qr h3 {
-      margin-bottom: 15px;
-    }
+  min-height: 20px;
 
-    .qr img {
-      width: 220px;
-      height: 220px;
-      max-width: 100%;
-      border-radius: 5px;
-    }
+  color: #198754;
 
-    .aviso {
-      margin-top: 10px;
-      font-size: 16px;
-      font-weight: bold;
-      color: #b90e0e;
-      line-height: 1.5;
-    }
-    .aviso1{
-      margin-top: 10px;
-      font-size: 20px;
-      font-weight: bold;
-      color: darkblue;
-      line-height: 1.5;
-    }
+  font-weight: bold;
+}
+
+
+/* QR */
+
+.qr {
+
+  margin-top: 30px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #eee;
+}
+
+.qr h3 {
+  margin-bottom: 15px;
+}
+
+.qr img {
+
+  width: 220px;
+  height: 220px;
+
+  max-width: 100%;
+
+  border-radius: 10px;
+}
+
+
+/* AVISO */
+
+.aviso {
+
+  margin-top: 20px;
+
+  font-size: 12px;
+
+  color: #777;
+
+  line-height: 1.5;
+}
