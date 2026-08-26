@@ -15,7 +15,7 @@ body {
   background-image: url(img/GatoBarato200x400.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: auto;
 
   padding: 20px;
 }
