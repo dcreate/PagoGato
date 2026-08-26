@@ -228,7 +228,8 @@ select:focus {
 
 .aviso {
   margin-top: 20px;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: bold;
   color: #0a0253;
   line-height: 1.5;
 }
