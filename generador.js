@@ -2,7 +2,7 @@
 /* ==========================================
    TARJETAS
    ========================================== */
-
+let auxiliar=0;
 const tarjetas = {
 
   tarjeta1: {
@@ -18,7 +18,7 @@ const tarjetas = {
 
   tarjeta2: {
 
-    banco: "Santander",
+    banco: "SANTANDER",
 
     numero: "5579087009265130",
 
@@ -65,7 +65,7 @@ function cambiarTarjeta() {
   const tarjeta =
     tarjetas[tarjetaActual];
 
-
+    
   document.getElementById("banco")
     .textContent =
     tarjeta.banco;
@@ -81,8 +81,7 @@ function cambiarTarjeta() {
     formatearNumero(
       tarjeta.numero
     );
-
-
+    auxiliar = tarjeta.numero;
   /* Actualizar QR */
 
   generarQR();
@@ -212,11 +211,8 @@ async function copiarDato(
    ========================================== */
 
 function generarQR() {
-
-  const paginaActual =
-   tarjeta.banco;
-
-
+ 
+  const paginaActual = auxiliar;
   const qrURL =
     "https://api.qrserver.com/v1/create-qr-code/"
     + "?size=300x300&data="
