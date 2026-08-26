@@ -1,5 +1,5 @@
    
-    const CARD_OWNER = "FELIX DE JESUS CARRILLO CELERINO";
+    const CARD_OWNER = "Felix de Jesus Carrillo Celerino";
     const CARD_NUMBER = "4152314110957118";
 
 function formatearNumero(numero) {
