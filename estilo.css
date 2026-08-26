@@ -5,49 +5,35 @@
 body {
   margin: 0;
   min-height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   font-family: Arial, sans-serif;
-
   background-image: url(img/logo.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto;
-
   padding: 20px;
 }
 
-
 /* TARJETA PRINCIPAL */
-
 .card {
   width: 100%;
   max-width: 400px;
-
   background: white;
-
   padding: 30px 25px;
-
   border-radius: 20px;
-
   text-align: center;
-
   box-shadow:
     0 8px 30px rgba(0,0,0,.15);
 }
-
 
 h1 {
   margin-top: 0;
   font-size: 24px;
 }
 
-
 /* SELECTOR */
-
 .selector-container {
   margin-top: 20px;
   text-align: left;
@@ -55,39 +41,26 @@ h1 {
 
 .selector-container label {
   display: block;
-
   margin-bottom: 7px;
-
   font-size: 13px;
-
-  color: #777;
-
+  color: #444343;
   font-weight: bold;
 }
 
 select {
   width: 100%;
-
   padding: 14px;
-
   border-radius: 12px;
-
   border: 1px solid #ddd;
-
   background: white;
-
   font-size: 16px;
-
   cursor: pointer;
-
   outline: none;
-
   transition: .3s;
 }
 
 select:focus {
   border-color: #222;
-
   box-shadow:
     0 0 0 3px rgba(0,0,0,.08);
 }
@@ -97,37 +70,25 @@ select:focus {
 
 .dato {
   margin-top: 20px;
-
   text-align: left;
 }
 
 .etiqueta {
   display: block;
-
   margin-bottom: 7px;
-
   font-size: 13px;
-
-  color: #777;
-
+  color: #6e6262;
   font-weight: bold;
 }
 
 .valor {
   padding: 16px 12px;
-
   background: #f5f5f5;
-
   border-radius: 12px;
-
   font-size: 18px;
-
   font-weight: bold;
-
   letter-spacing: 1px;
-
   word-break: break-word;
-
   text-align: center;
 }
 
@@ -136,29 +97,17 @@ select:focus {
 
 .boton {
   position: relative;
-
   overflow: hidden;
-
   width: 100%;
-
   margin-top: 10px;
-
   padding: 14px;
-
   border: none;
-
   border-radius: 12px;
-
   background: #222;
-
   color: white;
-
   font-size: 16px;
-
   font-weight: bold;
-
   cursor: pointer;
-
   transition:
     transform .15s ease,
     background .3s ease,
@@ -166,10 +115,8 @@ select:focus {
 }
 
 .boton:hover {
-  background: #333;
-
+  background: #a79d9d;
   transform: translateY(-2px);
-
   box-shadow:
     0 6px 18px rgba(0,0,0,.20);
 }
@@ -183,23 +130,16 @@ select:focus {
 
 .boton::after {
   content: "";
-
   position: absolute;
-
   width: 10px;
   height: 10px;
-
   left: 50%;
   top: 50%;
-
   border-radius: 50%;
-
   background: rgba(255,255,255,.45);
-
   transform:
     translate(-50%, -50%)
     scale(0);
-
   opacity: 0;
 }
 
@@ -213,7 +153,6 @@ select:focus {
     transform:
       translate(-50%, -50%)
       scale(0);
-
     opacity: .7;
   }
 
@@ -221,7 +160,6 @@ select:focus {
     transform:
       translate(-50%, -50%)
       scale(35);
-
     opacity: 0;
   }
 
@@ -231,9 +169,7 @@ select:focus {
 /* ESTADO COPIADO */
 
 .boton.copiado {
-
-  background: #198754;
-
+  background: #210c99;
   animation: copiado .5s ease;
 }
 
@@ -262,11 +198,8 @@ select:focus {
 
 #mensaje {
   margin-top: 15px;
-
   min-height: 20px;
-
-  color: #198754;
-
+  color: #e20a0a;
   font-weight: bold;
 }
 
@@ -274,11 +207,8 @@ select:focus {
 /* QR */
 
 .qr {
-
   margin-top: 30px;
-
-  padding-top: 20px;
-
+  padding-top: 10px;
   border-top: 1px solid #eee;
 }
 
@@ -287,12 +217,9 @@ select:focus {
 }
 
 .qr img {
-
-  width: 220px;
-  height: 220px;
-
+  width: 200px;
+  height: 200px;
   max-width: 100%;
-
   border-radius: 10px;
 }
 
@@ -300,12 +227,8 @@ select:focus {
 /* AVISO */
 
 .aviso {
-
   margin-top: 20px;
-
   font-size: 12px;
-
-  color: #777;
-
+  color: #0a0253;
   line-height: 1.5;
 }
