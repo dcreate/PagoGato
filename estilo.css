@@ -23,7 +23,7 @@
       background-image: url('img/GatoBarato200x400.png');
       background-repeat: no-repeat;
       background-position: center;
-      background-size: cover;
+      background-size: 350px 1150px;
 
 
     }
@@ -41,8 +41,8 @@
     .etiqueta {
       display: block;
       margin-bottom: 7px;
-      font-size: 13px;
-      color: #777;
+      font-size: 15px;
+      color: #310d94;
       font-weight: bold;
     }
 
@@ -50,7 +50,7 @@
       padding: 16px 12px;
       background: #f5f5f5;
       border-radius: 12px;
-      font-size: 19px;
+      font-size: 18px;
       font-weight: bold;
       letter-spacing: 1px;
       word-break: break-word;
@@ -217,8 +217,9 @@
 
     .aviso {
       margin-top: 10px;
-      font-size: 12px;
-      color: #777;
+      font-size: 16px;
+      font-weight: bold;
+      color: #b90e0e;
       line-height: 1.5;
     }
     .aviso1{

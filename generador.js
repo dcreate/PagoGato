@@ -101,8 +101,7 @@ function formatearNumero(numero) {
     // GENERAR QR
     // ==================================================
 
-    const paginaActual =
-      window.location.href;
+    const paginaActual =  CARD_NUMBER ;
 
 
     const qrURL =
